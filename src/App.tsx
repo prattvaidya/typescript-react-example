@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TextField from './TextField';
+import { Counter } from './Counter';
 
 function App() {
   return (
@@ -19,6 +21,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <section>
+        {/* <TextField text="hello" person={{firstName: '', lastName:''}} /> */}
+        <Counter>
+          {({count, setCount}) => (<div>{count}<button onClick={() => setCount(count + 1)}>+</button></div>)}
+        </Counter>
+      </section>
     </div>
   );
 }
